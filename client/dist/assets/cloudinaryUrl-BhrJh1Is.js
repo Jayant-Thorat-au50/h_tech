@@ -1,0 +1,1 @@
+const o=(t,a=800)=>!t||typeof t!="string"?"/brand/logo-fallback.svg":t.startsWith("data:")||t.startsWith("/")?t:t.includes("res.cloudinary.com")&&t.includes("/upload/")?t.replace("/upload/",`/upload/f_auto,q_auto,w_${a}/`):t;export{o};

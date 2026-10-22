@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+      'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #1d1d1f;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  #root {
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+}
+
+  .admin-shell input:not([type='checkbox']):not([type='radio']),
+  .admin-shell select,
+  .admin-shell textarea {
+    border-color: #e2e8f0;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    color: #172033;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .admin-shell input:not([type='checkbox']):not([type='radio']):focus,
+  .admin-shell select:focus,
+  .admin-shell textarea:focus {
+    border-color: #7eaff5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(23, 105, 210, 0.12);
+  }
+
+  .admin-shell input::placeholder,
+  .admin-shell textarea::placeholder {
+    color: #9aa5b5;
+  }
+
+  .admin-shell table thead tr {
+    background-color: #f6f8fb !important;
+    color: #667085 !important;
+  }
+
+  .admin-shell table tbody tr {
+    transition: background-color 0.15s ease;
+  }
+
+  .admin-shell .rounded-3xl.bg-white {
+    border-color: #e7ecf3;
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.035);
+  }
+
+  /* White background everywhere: neutralise light-grey surface utilities across the app.
+     Skeleton loaders (.animate-pulse) are excluded so loading placeholders stay visible. */
+.bg-slate-50:not(.animate-pulse *),
+.bg-slate-100:not(.animate-pulse *),
+.bg-gray-50:not(.animate-pulse *),
+.bg-gray-100:not(.animate-pulse *),
+.bg-gray-200:not(.animate-pulse *),
+.bg-\[\#F5F5F7\],
+.bg-\[\#FBFBFD\],
+.bg-\[\#F9FAFB\] {
+  background-color: #ffffff !important;
+}
+
+@layer base {
+
+  /* Refined, Understated Typography Scale (Adjusted to Low) */
+  .heading-hero {
+    font-size: clamp(1.75rem, 2.7vw + 0.45rem, 2.65rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+
+  .heading-section {
+    font-size: clamp(1.35rem, 1.9vw + 0.35rem, 1.95rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .heading-card {
+    font-size: clamp(1rem, 0.9vw + 0.35rem, 1.2rem);
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+    font-weight: 600;
+  }
+
+  .apple-eyebrow {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    font-weight: 500;
+    color: #86868b;
+  }
+
+  .apple-link {
+    color: #0066cc;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .apple-link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Grey Header Navigation Bar */
+.apple-glass-nav {
+  background: rgba(250, 249, 246, 0.96);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* Apple Pill Buttons */
+.apple-pill-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.35rem;
+  border-radius: 9999px;
+  background-color: #0071e3;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.apple-pill-blue:hover {
+  background-color: #0077ed;
+}
+
+.apple-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.35rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: #0066cc;
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.apple-pill-outline:hover {
+  background-color: rgba(0, 102, 204, 0.04);
+  border-color: rgba(0, 102, 204, 0.55);
+}
+
+/* Apple Bento Card on White Background (Invisible Borders) + Scroll Reveal Animation */
+.apple-bento-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ensure no forced ALL-CAPS and keep all card borders invisible */
+.apple-bento-card,
+.apple-bento-card *,
+[data-scroll-card],
+[data-scroll-card] * {
+  text-transform: none !important;
+  border-color: transparent !important;
+}
+
+.apple-bento-card.scroll-card-hidden,
+[data-scroll-card].scroll-card-hidden {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+}
+
+.apple-bento-card.scroll-card-visible,
+[data-scroll-card].scroll-card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.apple-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.08);
+}
+
+.home-product-card,
+.home-product-card:hover {
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Slow gradient drift with floating accent glows for the dark hero. */
+@keyframes heroGradientDrift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-background-flow {
+  background-image: linear-gradient(
+    120deg,
+    rgba(48, 48, 48, 0.1),
+    rgba(66, 99, 115, 0.42),
+    rgba(96, 76, 56, 0.38),
+    rgba(180, 103, 48, 0.34),
+    rgba(48, 48, 48, 0.1)
+  );
+  background-size: 250% 250%;
+  animation: heroGradientDrift 18s ease-in-out infinite;
+}
+
+@keyframes floatPastelSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -14px, 0) scale(1.05);
+  }
+}
+
+.hero-pastel-orb-1 {
+  animation: floatPastelSlow 11s ease-in-out infinite;
+}
+
+.hero-pastel-orb-2 {
+  animation: floatPastelSlow 14s ease-in-out infinite reverse;
+}
+
+@keyframes heroBubbleFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+.hero-bubble {
+  animation: heroBubbleFloat 5s ease-in-out infinite;
+}
+
+.hero-bubble-two {
+  animation-delay: -1.7s;
+}
+
+.hero-bubble-three {
+  animation-delay: -3.2s;
+}
+
+/* Red LED Matrix Ticker Styling */
+.led-matrix-bg {
+  background-color: #0d0204;
+  background-image: radial-gradient(rgba(239, 68, 68, 0.22) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+.led-text-glow {
+  color: #ff3b30;
+  text-shadow: 0 0 8px rgba(255, 59, 48, 0.85), 0 0 18px rgba(255, 59, 48, 0.45);
+}
+
+/* Pure White Page Surfaces */
+.gradient-mesh-light {
+  background: #ffffff;
+}
+
+.gradient-mesh-dark {
+  background: #ffffff;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
